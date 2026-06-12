@@ -1,0 +1,662 @@
+//1)CONTAIN()
+
+MANUAL INPUT
+public class Main {
+    public static void main(String[] args) {
+        String str="Hello Java";
+        System.out.println(str.contains("Hi"));
+    }
+}
+
+USER INPUT
+import java.util.Scanner;
+public class Main{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter: ");
+    String str = sc.nextLine();
+    if(str.contains("d")){
+      System.out.println("Yes");
+    }else{
+      System.out.println("No");
+    }
+  }
+}
+
+\\2) substring()
+
+MANUAL INPUT
+public class Main{
+  public static void main(String[]args){
+    String str = "Hello Programming";
+    System.out.println(str.substring(0,9));
+  }
+}
+
+USER INPUT
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter: ");
+        String str = sc.nextLine();
+        String sub = str.substring(0, 4); 
+        System.out.println(sub);
+    }
+}
+
+
+\\3)join()
+
+MANUAL INPUT
+public class Main {
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = "Java";
+        String result = String.join(" ", str1, str2);
+        System.out.println(result);
+    }
+}
+
+USER INPUT
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first string: ");
+        String str1 = sc.nextLine();
+        System.out.print("Enter second string: ");
+        String str2 = sc.nextLine();
+        String result = String.join(" ", str1, str2);
+        System.out.println("Joined String: " + result);
+    }
+}
+
+\\4)replace()
+
+MANUAL INPUT
+public class Main {
+    public static void main(String[] args) {
+        String str = "I like Java";
+        String result = str.replace("Java", "Python");
+        System.out.println(result);
+    }
+}
+
+USER INPUT
+import java.util.Scanner;
+public class Main{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in);
+     System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+        String result = str.replace("a", "@");
+        System.out.println("Result: " + result);
+  }
+}
+
+\\5)replaceAll()
+
+MANUAL INPUT
+public class Main{
+  public static void main(String[]args){
+    String str = "Programming";
+    String result = str.replaceAll("P","#");
+    System.out.println(result);
+  }
+}
+
+USER INPUT
+import java.util.Scanner;
+public class Main{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter a String : ");
+    String str = sc.nextLine();
+    String result = str.replaceAll("t","\\$");
+    System.out.println(result);
+  }
+}
+
+// 6 ) reverse()
+
+MANUAL INPUT
+public class Main {
+    public static void main(String[] args) {
+        String str = "hello";
+        StringBuilder sb = new StringBuilder(str);
+        System.out.println(sb.reverse());
+    }
+}
+
+USER INPUT
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+        StringBuilder sb = new StringBuilder(str);
+        System.out.println("Reversed: " + sb.reverse());
+    }
+}
+
+
+//7) sort
+
+import java.util.Scanner;
+import java.util.Arrays;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+        char[] arr = str.toCharArray();
+        Arrays.sort(arr);
+        System.out.println("Sorted: " + new String(arr));
+    }
+}
+
+
+//8) sort and reverse
+
+import java.util.Scanner;
+import java.util.Arrays;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+        char[] ch = str.toCharArray();
+        Arrays.sort(ch);
+        StringBuilder sb = new StringBuilder(new String(ch));
+        sb.reverse();
+        System.out.println("Sorted and Reversed: " + sb);
+    }
+}
+
+import java.util.Scanner;
+import java.util.Arrays;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+        char[] ch = str.toCharArray();
+        Arrays.sort(ch);
+        String sorted = new String(ch);
+        System.out.println("Sorted: " + sorted);
+        StringBuilder sb = new StringBuilder(sorted);
+        sb.reverse();
+        System.out.println("Reversed: " + sb);
+    }
+}
+
+
+//9) count a vowel in a word or a sentence
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String vowels = "aeiouAEIOU";
+        System.out.println("Enter a word or a Sentence: ");
+        String str = sc.nextLine();
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (vowels.contains(String.valueOf(str.charAt(i)))) {
+                count++;
+            }
+        }
+        System.out.println("Number of vowels: " + count);
+    }
+}
+
+
+//10) palindrome
+
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+        String rev = new StringBuilder(str).reverse().toString();
+        if (str.equals(rev)) {
+            System.out.println("Palindrome");
+        } else {
+            System.out.println("Not Palindrome");
+        }
+    }
+}
+
+//11)vowels using contains
+
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String vowels = "aeiou";
+        int count = 0;
+        System.out.print("Enter a word: ");
+        String str = sc.nextLine().toLowerCase();
+        for (int i = 0; i < str.length(); i++) {
+            if (vowels.contains("" + str.charAt(i))) {
+                count++;
+            }
+        }
+        System.out.println("Number of vowels: " + count);
+    }
+}*/
+
+
+//12) check whether a word contains a alphABET OR NOT BY USING TRUE OR FALSE
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine().toLowerCase();
+        boolean found = true;
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+            if (!str.contains(String.valueOf(ch))) {
+                found = false;
+                break;
+            }
+        }
+        System.out.println(found);
+    }
+}
+
+//GIVEN ELEMENT TO CHECK THE TARGET VALUE TO WAY OF SUM AND SUB
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter array elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        System.out.print("Enter target value: ");
+        int target = sc.nextInt();
+        System.out.println("Matching pairs:");
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (arr[i] + arr[j] == target) {
+                    System.out.println(arr[i] + " + " + arr[j] + " = " + target);
+                }
+                if (arr[i] - arr[j] == target) {
+                    System.out.println(arr[i] + " - " + arr[j] + " = " + target);
+                }
+                if (arr[j] - arr[i] == target) {
+                    System.out.println(arr[j] + " - " + arr[i] + " = " + target);
+                }
+            }
+        }
+    }
+}
+
+//SHUFFLE THE GIVEN WORDS
+
+import java.util.Scanner;
+public class Main {
+    static void shuffle(String str, String ans) {
+        if (str.length() == 0) {
+            System.out.println(ans);
+            return;
+        }
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            String rem = str.substring(0, i) + str.substring(i + 1);
+            shuffle(rem, ans + ch);
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a word: ");
+        String word = sc.next();
+        shuffle(word, "");
+    }
+}
+
+//TO CHECK THE POSSIBLE PAIRS
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter size: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("Pairs:");
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                System.out.println(arr[i] + "," + arr[j]);
+                System.out.println(arr[j] + "," + arr[i]);
+            }
+        }
+    }
+}
+
+// replaceFirst()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine();
+        String oldWord = sc.next();
+        String newWord = sc.next();
+
+        System.out.println(s.replaceFirst(oldWord, newWord));
+    }
+}
+
+// charAt()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.next();
+        int pos = sc.nextInt();
+
+        System.out.println(s.charAt(pos));
+    }
+}
+
+// getBytes()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.next();
+
+        byte[] b = s.getBytes();
+
+        for(byte x : b)
+            System.out.print(x + " ");
+    }
+}
+
+// indexOf()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.next();
+        char ch = sc.next().charAt(0);
+
+        System.out.println(s.indexOf(ch));
+    }
+}
+
+// compareTo()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s1 = sc.next();
+        String s2 = sc.next();
+
+        System.out.println(s1.compareTo(s2));
+    }
+}
+
+// compareToIgnoreCase()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s1 = sc.next();
+        String s2 = sc.next();
+
+        System.out.println(s1.compareToIgnoreCase(s2));
+    }
+}
+
+// trim()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine();
+
+        System.out.println(s.trim());
+    }
+}
+
+// toLowerCase()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.next();
+
+        System.out.println(s.toLowerCase());
+    }
+}
+
+// toUpperCase()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.next();
+
+        System.out.println(s.toUpperCase());
+    }
+}
+
+// valueOf()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        String s = String.valueOf(n);
+
+        System.out.println(s);
+    }
+}
+
+// toCharArray()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.next();
+
+        char[] ch = s.toCharArray();
+
+        for(char c : ch)
+            System.out.print(c + " ");
+    }
+}
+
+// matches()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.next();
+
+        System.out.println(s.matches("[0-9]+"));
+    }
+}
+
+// startsWith()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine();
+        String start = sc.next();
+
+        System.out.println(s.startsWith(start));
+    }
+}
+
+// endsWith()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine();
+        String end = sc.next();
+
+        System.out.println(s.endsWith(end));
+    }
+}
+
+// isEmpty()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine();
+
+        System.out.println(s.isEmpty());
+    }
+}
+
+// equals()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s1 = sc.next();
+        String s2 = sc.next();
+
+        System.out.println(s1.equals(s2));
+    }
+}
+
+// contentEquals()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.next();
+
+        StringBuilder sb = new StringBuilder(sc.next());
+
+        System.out.println(s.contentEquals(sb));
+    }
+}
+
+// length()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.next();
+
+        System.out.println(s.length());
+    }
+}
+
+// split()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine();
+
+        String[] arr = s.split(" ");
+
+        for(String x : arr)
+            System.out.println(x);
+    }
+}
+
+// StringBuilder replace()
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        StringBuilder sb = new StringBuilder(sc.nextLine());
+
+        int start = sc.nextInt();
+        int end = sc.nextInt();
+        String str = sc.next();
+
+        sb.replace(start, end, str);
+
+        System.out.println(sb);
+    }
+}  
+
+//TO CHECK THE GIVEN WORDS HAVE CONTAIN 26 ALPHABETIC
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine().toLowerCase();
+
+        boolean isPangram = true;
+
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+            if (!str.contains(String.valueOf(ch))) {
+                isPangram = false;
+                break;
+            }
+        }
+
+        System.out.println(isPangram);
+    }
+}
